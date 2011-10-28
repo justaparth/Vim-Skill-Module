@@ -1,0 +1,91 @@
+\input{./common.tex}
+
+\title{Linux and Vim}
+\author{Skill Module}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+%history of vim
+%GNU/linux
+
+\subsection{Why Learn Vim?}
+With powerful IDEs like Eclipse and Netbeans available, you might ask why
+one should even bother learning vim; it's an archaic text editor lacking
+many of the features that make IDEs so palatable. While to some extent
+this is true, vim is still an extremely powerful text editor that will
+make you much more efficient. Vim has an extremely rich set of
+functionality that will allow you to edit text in ways that conventional
+text editors do not allow.
+
+If you are a computer science major, in many of your classes you will
+need to work in a terminal environment and learning to use vim will be
+crucial in allowing you to program.
+%%add more stuff here%%
+
+\section{Getting Vim}
+Ideally, you should be working with vim in Linux environment. 
+
+\subsection{Linux}
+If you work in a linux environment, obtain vim from your package manager.
+For instance, on Ubuntu you would do:
+$$\text{\texttt{sudo apt-get install vim}}$$
+You can also obtain the graphical version of vim by doing:
+$$\text{\texttt{sudo apt-get install gvim}}$$
+
+\subsection{Windows}
+Follow this link to obtain \texttt{Gvim}. \texttt{Gvim} is a graphical
+version of vim: %TODO insert link
+
+\subsection{Mac}
+I have no idea %TODO find out how to get vim on macs
+
+\section{Understanding Vim Configuration Files}
+{\bf Note: this only applies if you develop on a *nix environment,
+which I highly suggest that you do.}
+Vim is an extremely configurable text editor. You can change how it 
+behaves with regards to colorschemes, syntax coloring, tab spacing,
+etc. To deal with all of this, Vim uses a \emph{configuration file}.
+This configuration file is named \texttt{.vimrc}. On linux systems, files
+whose names are prefixed by dots are hidden. This means that running \texttt{ls}
+or just looking through your file explorer, they will not be shown by default.
+
+Vim knows to look for this configuration file in a few places. The location 
+it looks first is in your home directory, i.e. \texttt{~/.vimrc}. I won't
+go into detail here about actually writing your own configuration files;
+for now, copy mine and as you use vim more you can change it suit
+your own purposes. I've included the file on the website. %TODO where to put file
+Download the file and place it in your home directory after you install vim.
+
+\section{Modes}
+If you have already tried opening vim and editing a file, you know that it's
+not as intuitive as notepad. Luckily, its also not as bad. Let's
+delve into how exactly one can use vim. 
+
+There are two modes in vim, {\bf Command Mode} and {\bf Insert Mode}.
+{\bf Insert Mode} is what you'd expect; you can type normally just
+like any other text editor. {\bf Command Mode}, or the mode in which
+Vim normally begins, is the mode where you can run different commands
+to edit the text. 
+
+\subsection{Insert Mode}
+%%not much to explain
+\subsection{Command Mode}
+%%add in all the commands possible here
+
+\section{Examples}
+%include examples of how to use vim
+
+\section{Conclusion}
+As you have seen, Vim is an extremely powerful text editing tool. {\bf If
+you read nothing else, read this.} Learning Vim is incremental. No one 
+knows all of Vim, and you certainly don't need to know all of Vim to
+be effective using it. {\bf Using Vim can be annoying at first.} At first
+you'll feel inefficien
+
+\section{Questions}
+%ask questions
+
+\end{document}
