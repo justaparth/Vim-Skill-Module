@@ -7,50 +7,77 @@
 \begin{document}
 \maketitle
 
+\section{How to get credit for this Skill Module}
+There are 4 steps to completing this Skill Module.
+\begin{enumerate}
+\item Read this document
+\item Run \texttt{vimtutor} and complete it
+\item Use vim for a while on your own
+\item Complete the questions and return them to your UGTA.
+\end{enumerate}
+
 \section{Introduction}
-%history of vim
-%GNU/linux
+Vim is a text editor written in $1988$ by Bram Moolenar, now an
+employee at Google. Vim stands for {\em Vi IMproved} as it is based
+on the older text editor Vi, but is thought to have a feature set
+that surpasses that of Vi. It now comes on default on basically any
+linux distribution you could possibly imagine using, and has become
+extremely popular in the Unix community since its onset. 
 
 \subsection{Why Learn Vim?}
 With powerful IDEs like Eclipse and Netbeans available, you might ask why
-one should even bother learning vim; it's an archaic text editor lacking
-many of the features that make IDEs so palatable. While to some extent
-this is true, vim is still an extremely powerful text editor that will
-make you much more efficient. Vim has an extremely rich set of
-functionality that will allow you to edit text in ways that conventional
-text editors do not allow.
+its even worth learning vim. While to some extent vim does not contain
+all the features that these powerful IDEs contain, vim is still an 
+extremely powerful text editor that will make you much more efficient.
+Vim has an extremely rich set of functionality that will allow you to 
+edit text in ways that conventional text editors do not allow. Also,
+vim is extremely lightweight and there will be many times when you
+do not need a powerful IDE, and many times when you cannot even use one.
 
-If you are a computer science major, in many of your classes you will
-need to work in a terminal environment and learning to use vim will be
-crucial in allowing you to program.
-%%add more stuff here%%
+And bottom line, if you are a computer science major then you will need
+to learn how to use a unix text editor. You'll be forced more and more
+to work in ssh-ed environments where getting a graphical interface is not
+really possible, and your efficiency in coding will be highly dependent
+upon your ability to use a text editor effectively.
 
 \section{Getting Vim}
-Ideally, you should be working with vim in Linux environment. 
+Vim is available for all operating systems and architectures, and I will
+outline how you can get a hold of it on different systems. However, 
+{\bf I highly recommend you work on a linux system. Most of the skill module 
+assumes you are in a Linux environment, and some parts even require it.}
+
+If you do not have linux installed on your computer, or you find it troubling
+to installing it, you can always use the CS machines in ENS basement or 
+in PAI.
 
 \subsection{Linux}
-If you work in a linux environment, obtain vim from your package manager.
-For instance, on Ubuntu you would do:
+If you want to install in a linux environment, obtain vim from your package 
+manager. For instance, on Ubuntu you would do:
 $$\text{\texttt{sudo apt-get install vim}}$$
 You can also obtain the graphical version of vim by doing:
 $$\text{\texttt{sudo apt-get install gvim}}$$
 
 \subsection{Windows}
 Follow this link to obtain \texttt{Gvim}. \texttt{Gvim} is a graphical
-version of vim: %TODO insert link
+version of vim:
+\url{http://www.vim.org/download.php#pc}
 
 \subsection{Mac}
-I have no idea %TODO find out how to get vim on macs
+Consult the following link. \url{http://www.vim.org/download.php#mac}.
 
 \section{Understanding Vim Configuration Files}
-{\bf Note: this only applies if you develop on a *nix environment,
-which I highly suggest that you do.}
-Vim is an extremely configurable text editor. You can change how it 
-behaves with regards to colorschemes, syntax coloring, tab spacing,
-etc. To deal with all of this, Vim uses a \emph{configuration file}.
-This configuration file is named \texttt{.vimrc}. On linux systems, files
-whose names are prefixed by dots are hidden. This means that running \texttt{ls}
+{\bf Note: this only applies if you develop on a *nix environment.}
+
+Vim has an extremely rich set of functionality. As a consequence, 
+vim is extremely configurable. You can change how it behaves with regards to 
+colorschemes, syntax coloring, tab spacing, highlighting, etc etc. 
+To deal with all of this, Vim uses a \emph{configuration file} named 
+\texttt{.vimrc}. On linux systems, files whose names are prefixed by dots 
+are hidden. This means that when running \texttt{ls}
 or just looking through your file explorer, they will not be shown by default.
+This makes it so that they don't clutter your view when looking through your
+system. (As an aside, to view hidden files when in terminal run
+\texttt{ls -a}, the \texttt{-a} standing for 'all'.)
 
 Vim knows to look for this configuration file in a few places. The location 
 it looks first is in your home directory, i.e. \texttt{~/.vimrc}. I won't
@@ -58,11 +85,16 @@ go into detail here about actually writing your own configuration files;
 for now, copy mine and as you use vim more you can change it suit
 your own purposes. I've included the file on the website. %TODO where to put file
 Download the file and place it in your home directory after you install vim.
+{\em Ensure that the filename is .vimrc, not anything else .vimrc.txt}.
 
-\section{Modes}
-If you have already tried opening vim and editing a file, you know that it's
-not as intuitive as notepad. Luckily, its also not as bad. Let's
-delve into how exactly one can use vim. 
+\section{Editing in Vim}
+It's finally time to begin learning to use vim!
+
+If you have already tried opening vim and editing a file, you may have
+noticed that it's not exactly intuitive. In fact, without any previous
+knowledge of vim it is probably impossible to edit a text file. However,
+there aren't a lot of things to learn about getting good enough
+to be at least efficient, so let's jump right in!
 
 There are two modes in vim, {\bf Command Mode} and {\bf Insert Mode}.
 {\bf Insert Mode} is what you'd expect; you can type normally just
@@ -71,21 +103,47 @@ Vim normally begins, is the mode where you can run different commands
 to edit the text. 
 
 \subsection{Insert Mode}
-%%not much to explain
+Insert Mode is very much just like being in notepad. You can type text, delete
+text, etc. There's not much to it. 
+
 \subsection{Command Mode}
-%%show some basics here
+Command Mode is where vim's true usefulness shows. From command mode, you can run
+different commands, or basically keyboard shortcuts, to manipulate and traverse
+text. For instance when in Command Mode, pressing 'w' will move your cursor
+to the next word, pressing 'gg' will take your cursor to the top of the file,
+pressing 'dd' will delete the current line, pressing 'p' will paste the last
+thing in the buffer, etc. etc. This list goes on and on, and in the next section
+we'll tackle learning at least a subset of this that will make you pretty efficient.
+
+\subsection{Switching Between Modes}
+This all begs the question, how does one switch between modes? By default, Vim
+starts you out in Command Mode. To get to insert mode, press 'i'. To get out of
+insert mode and back to command mode, press '<ESC>'. And it's that easy.
 
 \section{\texttt{vimtutor}}
-%%Use vim tutor to actually do this
+So there already exist many tools for learning to use Vim. One among them is called
+\texttt{vimtutor}. This program can be obtained from your package manager in Linux,
+and is also on the CS machines.
+
+Run this program, and just follow along. It's honestly not that long, and is very
+helpful in learning how to use Vim properly. Note that vimtutor is really nothing
+more than a program that opens a text file in vim.
 
 \section{Conclusion}
-As you have seen, Vim is an extremely powerful text editing tool. {\bf If
-you read nothing else, read this.} Learning Vim is incremental. No one 
-knows all of Vim, and you certainly don't need to know all of Vim to
-be effective using it. {\bf Using Vim can be annoying at first.} At first
-you'll feel inefficien
+As I hope you will come to see, Vim is an extremely powerful text editor that
+despite its age has still maintained its popularity in the development
+community. {\bf If you read nothing else in this entire Skill Module, please
+at least read this. The only way to really learn Vim is to go out and use it.
+It will be annoying to use initially, and you will feel less efficient. However
+this 'breaking-in' period will be short, and as you become more proficient
+you will come to appreciate Vim's many features in editing text.}
 
 \section{Questions}
 %ask questions
+
+\section{Contact}
+If at any point you have questions about this Skill Module, Vim, or anything
+in general, do not in the slightest hesitate to email me at 
+\url{parth.upadhyay@gmail.com}. I would be more than happy to help you out.
 
 \end{document}
