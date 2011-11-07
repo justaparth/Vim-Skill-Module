@@ -16,20 +16,27 @@ There are 4 steps to completing this Skill Module.
 \item Complete the questions and return them to your UGTA
 \end{enumerate}
 
+\noindent
+Your finished product should have the following things:
+\begin{itemize}
+\item A brief description of your experience with vim.
+\item The questions answered to your best ability
+\end{itemize}
+
 \section{Introduction}
 Vim is a text editor written in $1988$ by Bram Moolenar, now an
 employee at Google. Vim stands for {\em Vi IMproved} as it is based
 on the older text editor Vi, but is thought to have a feature set
-that surpasses that of Vi. It now comes on default on basically any
+that surpasses that of Vi. It now comes default on basically any
 linux distribution you could possibly imagine using, and has become
 extremely popular in the Unix community since its onset. 
 
 \subsection{Why Learn Vim?}
 With powerful IDEs like Eclipse and Netbeans available, you might ask why
 its even worth learning vim. While to some extent vim does not contain
-all the features that these powerful IDEs contain, vim is still an 
+all the features that these IDEs contain, vim is still an 
 extremely powerful text editor that will make you much more efficient.
-Vim has an extremely rich set of functionality that will allow you to 
+It has an extremely rich set of functionality that will allow you to 
 edit text in ways that conventional text editors do not allow. Also,
 vim is extremely lightweight and there will be many times when you
 do not need a powerful IDE, or cannot even use one. It's one of those
@@ -55,7 +62,8 @@ in PAI.
 If you want to install in a linux environment, obtain vim from your package 
 manager. For instance, on Ubuntu you would do:
 $$\text{\texttt{sudo apt-get install vim}}$$
-You can also obtain the graphical version of vim by doing:
+You can also obtain the graphical version of vim by doing (this package
+contains both the normal version and the graphical version):
 $$\text{\texttt{sudo apt-get install vim-gnome}}$$
 
 \subsection{Windows}
@@ -71,20 +79,19 @@ Consult the following link. \url{http://www.vim.org/download.php#mac}.
 
 As a consequence of vim's rich functionality, vim is 
 extremely configurable. You can change how it behaves with regards to 
-colorschemes, syntax coloring, tab spacing, highlighting, etc etc. 
+colorschemes, syntax coloring, tab spacing, highlighting, etc. 
 To deal with all of this, Vim uses a \emph{configuration file} named 
 \texttt{.vimrc}. On linux systems, files whose names are prefixed by dots 
 are hidden. This means that when running \texttt{ls}
 or just looking through your file explorer, they will not be shown by default.
-This makes it so that they don't clutter your view when looking through your
-system. (As an aside, to view hidden files when in terminal run
+(As an aside, to view hidden files when in terminal run
 \texttt{ls -a}, the \texttt{-a} standing for 'all'.)
 
-Vim knows to look for this configuration file in a few places. The location 
-it looks first is in your home directory, i.e. \texttt{~/.vimrc}. I won't
+Vim knows where to look for this configuration file. The location 
+it looks first is in your home directory, i.e. \texttt{\textasciitilde/.vimrc}. I won't
 go into detail here about actually writing your own configuration files;
 for now, copy mine and as you use vim more you can change it suit
-your own purposes. I've included the file on the website. %TODO where to put file
+your own purposes. I've included the file on the website. 
 Download the file and place it in your home directory after you install vim.
 {\em Ensure that the filename is .vimrc, not anything else like .vimrc.txt}.
 
@@ -93,9 +100,9 @@ It's finally time to begin learning to use vim!
 
 If you have already tried opening vim and editing a file, you may have
 noticed that it's not exactly intuitive. In fact, without any previous
-knowledge of vim it is probably impossible to edit a text file. However,
-there aren't a lot of things to learn about getting good enough
-to be at least efficient, so let's jump right in!
+knowledge of vim it is probably impossible to edit a file. 
+However, there aren't a lot of things you need to learn to become
+relatively efficient in vim. 
 
 There are two modes in vim, {\bf Command Mode} and {\bf Insert Mode}.
 {\bf Insert Mode} is what you'd expect; you can type normally just
@@ -104,7 +111,7 @@ Vim normally begins, is the mode where you can run different commands
 to edit the text. 
 
 \subsection{Insert Mode}
-Insert Mode is very much just like being in notepad. You can type text, delete
+Insert Mode is just like being in notepad. You can type text, delete
 text, etc. There's not much to it. 
 
 \subsection{Command Mode}
@@ -114,25 +121,26 @@ text. For instance when in Command Mode, pressing 'w' will move your cursor
 to the next word, pressing 'gg' will take your cursor to the top of the file,
 pressing 'dd' will delete the current line, pressing 'p' will paste the last
 thing in the buffer, etc. etc. This list goes on and on, and in the next section
-we'll tackle learning at least a subset of this that will make you pretty efficient.
+we'll tackle learning a useful subset of this list.
 
 \subsection{Switching Between Modes}
-This all begs the question, how does one switch between modes? By default, Vim
+This all begs the question, how does one get to either mode? By default, Vim
 starts you out in Command Mode. To get to insert mode, press 'i'. To get out of
-insert mode and back to command mode, press '<ESC>'. And it's that easy.
+insert mode and back to command mode, press '$\langle$ESC$\rangle$'. And it's that easy.
 
 \section{\texttt{vimtutor}}
 So there already exist many tools for learning to use Vim. One among them is called
 \texttt{vimtutor}. This program can be obtained from your package manager in Linux,
 and is also on the CS machines.
 
-Run this program, and just follow along. It's honestly not that long, and is very
+To run this program, open up a terminal and run the command \texttt{vimtutor}.
+After that, just follow along. It's honestly not that long, and is very
 helpful in learning how to use Vim properly. Note that vimtutor is really nothing
-more than a program that opens a text file in vim.
+more than editing a text file in vim. 
 
 \section{Conclusion}
 As I hope you will come to see, Vim is an extremely powerful text editor that
-despite its age has still maintained its popularity in the development
+despite its age has still maintained vast popularity in the development
 community. {\bf If you read nothing else in this entire Skill Module, please
 at least read this. The only way to really learn Vim is to go out and use it.
 It will be annoying to use initially, and you will feel less efficient. However
@@ -140,16 +148,78 @@ this 'breaking-in' period will be short, and as you become more proficient
 you will come to appreciate Vim's many features in editing text.}
 
 {\bf The only way to get better at Vim is to constantly question how you do 
-things. Do not get set in habits, but rather catch yourself when you think
-that there are more efficient ways to do what you are doing.}
+things. Do not get set in habits, but rather catch yourself 
+and always question if there is a faster way to do what you are doing.}
+
+\section{Advanced Vim}
+There are more advanced features of vim that \texttt{vimtutor} did not cover,
+and I will not cover here. However, I encourage you to go out on your own time
+and learn about these things as you become more familiar with vim. Here's
+a list of things that I think you may find interesting to learn more about:
+\begin{itemize}
+\item Vim Plugins and Colorschemes
+\item Markers
+\item Registers
+\item Macros
+\item Window Splits
+\item Vimdiff
+\item Fixing Code Indentation
+\item Code Complete (Yes, Eclipse-style)
+\end{itemize}
+
+\noindent
+And there's much more that I don't even know about!
 
 \section{Questions}
-%TODO%TODO%TODO%TODO
+
+\begin{figure}
+\begin{center}
+\leavevmode
+\includegraphics[scale=0.3]{images/question-pic.png}
+\end{center}
+\caption{Code Snippet}
+\label{fig:questionpic}
+\end{figure}
+
+Consider Figure \ref{fig:questionpic}. Each question will ask you to take some
+action upon the text, and answer as if your cursor is in the current position.
+\\\\
+In {\bf bold} next to every question, i've indicated how many characters
+it took me to do it. This is not suggesting that you should get the same number,
+or that I've achieved the best way to do it. It is just a guide to help you
+think in the right direction, and you won't be penalized for not getting it
+in the exact same way. Just try your best.
+
+\begin{enumerate}
+\item This is a gimme. Describe how to move left, right, up and down from the keyboard.
+\item How do you undo a change? Redo? ({\bf 1})
+\item How can you delete the whole line? ({\bf 2})
+\item How can you delete the current line and the next 5? ({\bf 3})
+\item How can you duplicate the current line in place? ({\bf 3})
+\item How can you bring your cursor to sit upon the equal sign? ({\bf 3 })
+\item For this question assume your cursor is at the equal sign. Now delete the rest of the line. ({\bf 2})
+\item Same context as previous question. Delete until beginning of the line ({\bf 2})
+\item How can you delete only the word 'Value' upon which the cursor sits? ({\bf 2})
+\item Page Up? Page Down? (Don't hit the page-up key). ({\bf 2 for each})
+\item How can you jump backward by words? ({\bf 1})
+\item How can you get to the beginning/end of the line? Of the file? ({\bf 2, 1})
+\item Delete the contents of the entire file. ({\bf 4})
+\item Find the matching end-brace of the brace on line $115$. {\bf 3}
+\item Delete everything contained from the brace on line $115$ to its match. ({\bf 4})
+\item Search for all instances of \texttt{src\_val}. ({\bf Theres really only one way to do the search and replace ones, and the length isn't important})
+\item Replace \texttt{src\_val} with \texttt{sv}. 
+\item Now modify that to work for any number of instances on the line.
+\item Now modify that to work for the entire program.
+\item Now modify that to prompt you before making changes.
+
+\end{enumerate}
 
 \section{Contact}
 If at any point you have questions about this Skill Module, Vim, or anything
 in general, do not in the slightest hesitate to email me at 
 \url{parth.upadhyay@gmail.com}. I would be more than happy to help you out.
 Also feel free to forward me suggestions/thoughts you have about this skill module.
-
+\\\\
+You can freely get a copy of the source of the skill module here:
+\url{https://github.com/parthupadhyay/Vim-Skill-Module}.
 \end{document}
